@@ -1,4 +1,4 @@
-FROM resin/rpi-node:0.10-wheezy
+FROM resin/%%RESIN_MACHINE_NAME%%-node:6
 
 RUN apt-get update \
   && apt-get upgrade -y \
@@ -14,7 +14,8 @@ RUN apt-get update \
     ttf-mscorefonts-installer \
     x11-xserver-utils \
     xinit \
-    xwit
+    xwit \
+    unclutter
 
 RUN mkdir -p /usr/src/app \
   && ln -s /usr/src/app /app

@@ -20,6 +20,9 @@ while true; do
 	# Disable DPMS / Screen blanking
 	xset -dpms
 	xset s off
+	xset s noblank
+
+	unclutter -idle 0.1 -root
 
 	# Reset the framebuffer's colour-depth
 	fbset -depth $( cat /sys/module/*fb*/parameters/fbdepth );
